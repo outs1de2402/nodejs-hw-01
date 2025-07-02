@@ -1,7 +1,7 @@
-const fs = require('node:fs/promises');
-const { PATH_DB } = require('../constants/contacts');
+import fs from 'node:fs/promises';
+import { PATH_DB } from '../constants/contacts';
 
-async function readContacts() {
+export async function readContacts() {
   try {
     const data = await fs.readFile(PATH_DB, 'utf-8');
     return JSON.parse(data || '[]');

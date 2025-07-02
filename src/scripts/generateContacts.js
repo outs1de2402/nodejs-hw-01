@@ -1,11 +1,10 @@
-const { readContacts } = require('../utils/readContacts');
-const { writeContacts } = require('../utils/writeContacts');
-const { createFakeContact } = require('../utils/createFakeContact');
+import { readContacts } from '../utils/readContacts.js';
+import { writeContacts } from '../utils/writeContacts.js';
+import { createFakeContact } from '../utils/createFakeContact.js';
 
-// Кількість контактів береться з CLI (npm run generate 5) або 1 за замовчанням
-const amount = Number(process.argv[2]) || 1;
+export const amount = Number(process.argv[2]) || 1;
 
-async function generateContacts(count) {
+export async function generateContacts(count) {
   const contacts = await readContacts();
   const newContacts = Array.from({ length: count }, () => createFakeContact());
   const updated = [...contacts, ...newContacts];

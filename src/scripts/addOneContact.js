@@ -1,8 +1,8 @@
-const { readContacts } = require('../utils/readContacts');
-const { writeContacts } = require('../utils/writeContacts');
-const { createFakeContact } = require('../utils/createFakeContact');
+import { readContacts } from '../utils/readContacts.js';
+import { writeContacts } from '../utils/writeContacts.js';
+import { createFakeContact } from '../utils/createFakeContact';
 
-async function addOneContact() {
+export async function addOneContact() {
   const contacts = await readContacts();
   contacts.push(createFakeContact());
   await writeContacts(contacts);
