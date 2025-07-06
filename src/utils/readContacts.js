@@ -10,5 +10,3 @@ export async function readContacts() {
     throw error;
   }
 }
-
-module.exports = { readContacts };
